@@ -2,7 +2,7 @@ package prj0;
 
 /**
  * 
- * @author Put your names here
+ * @author Jasper Wilkerson & Jade Sherer
  *
  */
 public class Project0 {
