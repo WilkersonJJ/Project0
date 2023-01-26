@@ -6,21 +6,44 @@ import java.util.Scanner;
  *
  */
 public class Project0 {
+
+	private Node[] nodeContainer;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in); 
 
-		int N = sc.nextInt(); 
-		int M = sc.nextInt(); 
-		int Q = sc.nextInt();
+		int numNodes = sc.nextInt(); 
+		int numEdges = sc.nextInt(); 
+		int numQueries = sc.nextInt();
+		int count = 0;
+		nodeContainer = new Node[numNodes];
 
-		for (int i = 0; i < M; i++)
+		//this for loop creates all the nodes
+		for (int i = 0; i < numNodes; i++)
 		{
-			//hehe boobs
+			Node nodey = new Node(count + 1, numEdges);
+			nodeContainer[count] = nodey;
+			count++;
 		}
-		for (int i = 0; i < Q; i++)
+		//this loop reads the two numbers and adds appropriate buddies
+		for (int i = 0; i < numEdges; i++)
+		{
+
+			//reads in two numbers, if there already exists a node, add its buddy
+		}
+		for (int i = 0; i < numQueries; i++)
 		{
 
 		}
 		sc.close();
+	}
+	private Node search(int nodeNumber)
+	{
+		for (int i = 0; i < 0; i++)
+		{
+			if (nodeNumber == nodeContainer[i].getName())
+			{
+				return Node[i];
+			}
+		}
 	}
 }
