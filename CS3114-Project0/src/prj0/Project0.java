@@ -29,7 +29,7 @@ public class Project0 {
 			int two = sc.nextInt();
 			Node node = search(nodeContainer, one);
 			node.addNodeBuddy(two);
-			Node nodeTwo = search(nodeContainer, two)
+			Node nodeTwo = search(nodeContainer, two);
 			nodeTwo.addNodeBuddy(one);
 		}
 		for (int i = 0; i < numQueries; i++)
