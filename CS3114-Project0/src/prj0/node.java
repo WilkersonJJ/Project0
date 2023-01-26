@@ -1,5 +1,12 @@
 package prj0;
 
+/**
+ * Node class to handle the adjacency list
+ * 
+ * @author Jasper Wilkerson
+ * @author Jade Sherer
+ *
+ */
 public class Node {
     private int identifier;
     private int[] nodeBuddies;

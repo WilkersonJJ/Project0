@@ -3,12 +3,23 @@ package prj0;
 import java.util.Scanner;
 
 /**
+ * Project runner containing the main method
  * 
- * @author Jasper Wilkerson & Jade Sherer
+ * @author Jasper Wilkerson
+ * @author Jade Sherer
  *
  */
 public class Project0 {
+
+    /**
+     * Main method that runs input and process it for output
+     * 
+     * @param args
+     *            standard main method arguments, not needed for this project
+     */
     public static void main(String[] args) {
+        
+        // Create a new scanner object
         Scanner sc = new Scanner(System.in);
 
         int numNodes = sc.nextInt();
@@ -17,13 +28,13 @@ public class Project0 {
         int count = 0;
         Node[] nodeContainer = new Node[numNodes];
 
-        // this for loop creates all the nodes
+        // This for loop creates all the nodes
         for (int i = 0; i < numNodes; i++) {
             Node nodey = new Node(count + 1, numEdges);
             nodeContainer[count] = nodey;
             count++;
         }
-        // this loop reads the two numbers and adds appropriate buddies
+        // This loop reads the two numbers and adds appropriate buddies
         for (int i = 0; i < numEdges; i++) {
             int one = sc.nextInt();
             int two = sc.nextInt();
@@ -35,6 +46,8 @@ public class Project0 {
         for (int i = 0; i < numQueries; i++) {
 
         }
+        
+        // Closes the scanner object when we're done with it
         sc.close();
     }
 
