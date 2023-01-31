@@ -1,7 +1,8 @@
 package prj0;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Project runner containing the main method
  * 
@@ -25,34 +26,35 @@ public class Project0 {
         int numNodes = sc.nextInt();
         int numEdges = sc.nextInt();
         int numQueries = sc.nextInt();
+        
+        // Creates an adjacency list and populates it with empty sub-lists
+        ArrayList<List<Integer>> data = new ArrayList<List<Integer>>(numNodes);
+        for (int i = 0; i < numNodes; i++) {
+            data.add(new ArrayList<Integer>());
+        }
 
-        int[][] data = new int[numNodes][numNodes];
-
-        // This loop reads the two numbers and +1 to every pair
+        // This loop reads the two numbers and adds each edge
         for (int i = 0; i < numEdges; i++) {
             int one = sc.nextInt();
             int two = sc.nextInt();
             
-            //since the array is indexed at 0 but our data starts at 1, to find the data we search at n - 1
-            data[one - 1][two - 1]++;
-            data[two - 1][one - 1]++;
+            data.get(one - 1).add(two);
+            data.get(two - 1).add(one);
         }
         //this loop goes through all the queries and prints for each query
         for (int i = 0; i < numQueries; i++) {
             StringBuilder str = new StringBuilder();
-            int q = sc.nextInt(); //q = current query
-            //this loop iterates down the column and appends if the data is >0
+            int q = sc.nextInt() - 1; //q = current query
 
             //boolean to check if any adjacencies are found
             boolean found  = false;
-            for (int j = 0; j < numNodes; j++)
+            for (int j = 1; j <= numNodes; j++)
             {
                 //again, all data is stored one back, so subtract and add to accomadate
-                if (data[q - 1][j] > 0 )
+                if (data.get(q).contains(j))
                 {
                     found = true;
-                    int index = j + 1;
-                    str.append(index + " ");
+                    str.append(j + " ");
                 }
             }
             if (!found)
